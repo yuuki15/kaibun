@@ -1,2 +1,1 @@
-# kaibun
-Japanese palindromes 回文
+# Japanese palindromes
