@@ -1,5 +1,10 @@
 # Japanese palindromes
 
+* https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-all-titles-in-ns0.gz
+* https://dumps.wikimedia.org/jawiktionary/latest/jawiktionary-latest-all-titles-in-ns0.gz
+* https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-all-titles-in-ns0.gz
+* https://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-all-titles-in-ns0.gz
+
 ```bash
 perl -Mutf8 -C -nlE 'length($_)>=3 and /^[ぁ-ゖァ-ヶー]+$/ and /^((.)(?:(?1)|.?)\2)$/ or next; tr/ァ-ヶ/ぁ-ゖ/; $a[length$_]{$_}=1; END { for$i(3..$#a){ %{$a[$i]} or next; open$fh,">",sprintf"%02d.txt",$i; print $fh $_ for sort keys %{$a[$i]}; close$fh } }' *-ns0.txt
 ```
